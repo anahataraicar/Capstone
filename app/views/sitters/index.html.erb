@@ -1,0 +1,15 @@
+<h1>Sitters#index</h1>
+<p>Find me in app/views/sitters/index.html.erb</p>
+
+<% @sitters.each do |sitter| %>
+<p> <%= sitter.first_name %>  <%= sitter.last_name %> </p>
+<p> <%= sitter.address %> </p>
+<p> <%= sitter.city %> </p>
+<p> <%= sitter.state %> </p>
+<p> <%= sitter.zipcode %> </p>
+<p> <%=sitter.phone_number %> </p>
+<p> <%= sitter.email %> </p>
+<p> <%= sitter.bio %> </p>
+<p> <a href="/sitters/<%= sitter.id %>">  View Sitter  </p>
+<% end %>
+

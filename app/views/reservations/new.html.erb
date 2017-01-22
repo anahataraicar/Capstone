@@ -1,0 +1,41 @@
+<h3>Make a reservation here: </h3>
+
+<%= form_tag '/reservations', method: :post do  %>
+<%= collection_select(:pet, :pet_id, current_owner.pets, :id, :name) %>
+ <div>
+    <%= label_tag :start_date %>
+    <%= text_field_tag :start_date %>
+  </div>
+ <div>
+    <%= label_tag :end_date%>
+    <%= text_field_tag :end_date%>
+  </div>
+
+  <div>
+    <%= label_tag :host %>
+    <%= text_field_tag :host %>
+  </div>
+    <div>
+    <%= label_tag :message %>
+    <%= text_field_tag :message %>
+  </div>
+    <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price %>
+  </div>
+  <div>
+    <%= label_tag :start_time %>
+    <%= text_field_tag :start_time %>
+  </div>
+  <div>
+    <%= label_tag :end_time %>
+    <%= text_field_tag :end_time %>
+  </div>
+  
+    
+   <div>
+    <%= hidden_field_tag :sitter_id, params[:sitter_id] %>
+  </div>
+  
+  <%= submit_tag "Submit" %>
+<% end %>

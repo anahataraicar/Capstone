@@ -1,0 +1,2 @@
+class AcceptedSpecie < ApplicationRecord
+end

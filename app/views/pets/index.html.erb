@@ -1,0 +1,12 @@
+<h3> List of pets: </h3>
+<%@pets.each do |pet| %>
+<p> <strong> Name: </strong> <%= pet.name %> </p>
+<p> <strong> Age:</strong> <%= pet.age %> </p>
+<p> <strong> Bio: </strong> <<%= pet.bio %> </p>
+<p> <strong> Gender: </strong> <%= pet.gender %> </p>
+<p> <%= pet.owner_id %> </p>
+<p> <%=pet.pet_id %> </p>
+
+<img src="<%= pet.image %>" width="335">
+
+<% end %>

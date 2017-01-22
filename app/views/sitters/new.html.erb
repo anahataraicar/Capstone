@@ -1,0 +1,51 @@
+<h3>Please sign up here: </h3>
+
+<%= form_tag '/signup/sitters', method: :post do  %>
+ <div>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name %>
+  </div>
+ <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name %>
+  </div>
+
+  <div>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+    <div>
+    <%= label_tag :address %>
+    <%= text_field_tag :address %>
+  </div>
+    <div>
+    <%= label_tag :city %>
+    <%= text_field_tag :city %>
+  </div>
+  <div>
+    <%= label_tag :state %>
+    <%= text_field_tag :state %>
+  </div>
+  <div>
+    <%= label_tag :zipcode %>
+    <%= text_field_tag :zipcode %>
+  </div>
+  <div>
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number %>
+  </div>
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div>
+    <%= label_tag :password_confirmation %>
+    <%= password_field_tag :password_confirmation %>
+  </div>
+
+  <%= submit_tag "Submit" %>
+<% end %>

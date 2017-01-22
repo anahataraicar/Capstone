@@ -1,0 +1,5 @@
+class ChangeColumnNameToSpecies < ActiveRecord::Migration[5.0]
+  def change
+  	rename_column :pets, :type, :species
+  end
+end

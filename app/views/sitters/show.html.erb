@@ -1,0 +1,45 @@
+
+Here is the sitter profile:
+<p> <%= @sitter.first_name %>  <%= @sitter.last_name %> </p>
+<p> <%= @sitter.address %> </p>
+<p> <%= @sitter.city %> </p>
+<p> <%= @sitter.state %> </p>
+<p> <%= @sitter.zipcode %> </p>
+<p> <%=@sitter.phone_number %> </p>
+<p> <%= @sitter.email %> </p>
+
+<% if current_sitter %>
+<h4> My reservations </h4>
+
+
+<% @reservations.each do |reservation| %>
+	<p> Start Date:<%= reservation.start_date %> </p>
+	<p> End Date: <%= reservation.end_date %> </p>
+	<p> Start Time: <%= reservation.start_time%> </p>
+	<p> End Time:<%= reservation.end_time %> </p>
+	<p> Host: <%= reservation.host %> </p>
+	<p>Message: <%= reservation.message %></p>
+	<p> Price: <%= reservation.price %> </p>
+	<p> Confirm your reservation : </p>
+	<p> <%= reservation.confirmed %> </p>
+
+
+	<%= form_tag "/reservations/#{reservation.id}", method: :patch do  %>	
+
+	  <%= submit_tag "Yes", name: "confirmed"%>
+	    <%= submit_tag "No", name: "not_confirmed" %>
+
+	<% end %>
+<% end %>
+<% end %>
+
+<strong> Reviews for <%=@sitter.first_name %> </strong>
+<% @reviews.each do |review| %>
+<p> <%= review.review %> <p>
+<% end %>
+
+<% if current_owner %>
+<p> <a href="/reservations?sitter_id=<%= @sitter.id%>"> Make a reservation </p>
+<p> <a href="/reviews?sitter_id=<%= @sitter.id%>"> Add a review </p>
+<% end %>
+

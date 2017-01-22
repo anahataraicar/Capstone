@@ -1,0 +1,20 @@
+
+Add a review here:
+
+<%= form_tag '/reviews', method: :post do  %>
+
+ <div>
+    <%= label_tag :review %>
+    <%= text_field_tag :review %>
+  </div>
+  <div>
+    <%= hidden_field_tag :owner_id, params[:owner_id] %>
+  </div>
+  <div>
+    <%= hidden_field_tag :sitter_id, params[:sitter_id] %>
+  </div>
+
+  <%= submit_tag "Submit" %>
+<% end %>
+
+<p> <a href="sitters/#{@sitter.id}"> Back to sitter profile </p>

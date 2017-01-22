@@ -1,0 +1,45 @@
+
+Here is your profile:
+<p> First Name: <%= @owner.first_name %> </p>
+<p> Last Name: <%= @owner.last_name %> </p>
+<p>Address: <%= @owner.address %> </p>
+<p> City:<%= @owner.city %> </p>
+<p> State: <%= @owner.state %> </p>
+<p>  Zipcode:<%= @owner.zipcode %> </p>
+<p> Phone Number: <%=@owner.phone_number %> </p>
+<p> Email: <%= @owner.email %> </p>
+
+
+<h4>Here is my pet: </h4>
+
+<%@pets.each do |pet| %>
+<p> <strong> Name: </strong> <%= pet.name %> </p>
+<p> <strong> Age:</strong> <%= pet.age %> </p>
+<p> <strong> Bio: </strong> <<%= pet.bio %> </p>
+<p> <strong> Gender: </strong> <%= pet.gender %> </p>
+<p> <%= pet.owner_id %> </p>
+<p> <%=pet.id %> </p>
+
+<img src="<%= pet.image %>" width="335">
+
+<% end %>
+
+<h4> My reservations: </h4>
+<% @reservations.each do |reservation| %>
+ <p> Start Date:<%= reservation.start_date %> </p>
+<p> End Date: <%= reservation.end_date %> </p>
+<p> Start Time: <%= reservation.start_time%> </p>
+<p> End Time:<%= reservation.end_time %> </p>
+<p> Host: <%= reservation.host %> </p>
+<p>Message: <%= reservation.message %></p>
+<p> Price: <%= reservation.price %> </p>
+<% end %>
+
+
+<h3> Find a sitter for your pet </h3>
+
+<%= form_tag('/sitters', :method => "get", id: "search-form") do %>
+
+    <%= text_field_tag :search, params[:pet_types], placeholder: "Search Sitters" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
