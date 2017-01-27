@@ -1,6 +1,26 @@
 
-Here is your profile:
-<p> First Name: <%= @owner.first_name %> </p>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Free Smarty Website Template | Services :: w3layouts</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+        <div class="clear"></div> 
+     </div>
+  </div>
+ </div>
+       <div class="main" style="background-color: floralWhite;" >
+     <div class="wrap">
+      <div class="about">
+        <div class="about-top">
+          <div class="col span_1_of_about">
+          <h3> MY PROFILE </h3>
+            <div class="sidebar-nav">
+   
+   <p> First Name: <%= @owner.first_name %> </p>
 <p> Last Name: <%= @owner.last_name %> </p>
 <p>Address: <%= @owner.address %> </p>
 <p> City:<%= @owner.city %> </p>
@@ -9,20 +29,6 @@ Here is your profile:
 <p> Phone Number: <%=@owner.phone_number %> </p>
 <p> Email: <%= @owner.email %> </p>
 
-
-<h4>Here is my pet: </h4>
-
-<%@pets.each do |pet| %>
-<p> <strong> Name: </strong> <%= pet.name %> </p>
-<p> <strong> Age:</strong> <%= pet.age %> </p>
-<p> <strong> Bio: </strong> <<%= pet.bio %> </p>
-<p> <strong> Gender: </strong> <%= pet.gender %> </p>
-<p> <%= pet.owner_id %> </p>
-<p> <%=pet.id %> </p>
-
-<img src="<%= pet.image %>" width="335">
-
-<% end %>
 
 <h4> My reservations: </h4>
 <% @reservations.each do |reservation| %>
@@ -34,12 +40,83 @@ Here is your profile:
 <p>Message: <%= reservation.message %></p>
 <p> Price: <%= reservation.price %> </p>
 <% end %>
+                    
 
 
-<h3> Find a sitter for your pet </h3>
+             
+          
+              <div class="clear">
+           
+              </div> 
+              <div>
+                     	<h3> Find a sitter for your pet by animal type</h3>
 
 <%= form_tag('/sitters', :method => "get", id: "search-form") do %>
 
     <%= text_field_tag :search, params[:pet_types], placeholder: "Search Sitters" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
+              </div>
+                   </div>
+          </div>
+          <div class="col span_1_of_about1">
+          <h3>PET PROFILE </h3>
+            <div class="services-box">
+
+
+
+<%@pets.each do |pet| %>
+<p> <strong> Name: </strong> <%= pet.name %> </p>
+<p> <strong> Age:</strong> <%= pet.age %> </p>
+<p> <strong> Bio:  </strong> <<%= pet.bio %> </p>
+<p> <strong> Gender: </strong> <%= pet.gender %> </p>
+<p> <%= pet.owner_id %> </p>
+<p> <%=pet.id %> </p>
+
+<img src="<%= pet.image %>" width="335">
+
+<% end %>
+   <p> <strong> <a href="/pets/new"> Add a new pet </strong> </p>
+              
+                   
+                   </div>
+                   
+                    
+              
+              
+               </div>
+              
+               </div>
+               
+            </div>
+             
+                
+                <div class="clear"></div>
+              </li>
+            </ul>
+           </div>
+          <div class="clear"></div>
+         </div>
+    </div>
+  </div>
+   </div>
+   
+
+
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

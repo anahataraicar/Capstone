@@ -14,6 +14,7 @@ class SittersController < ApplicationController
 end
 
   def new
+    @pet_types=PetType.all
   	render 'new.html.erb'
   end 
 
@@ -32,8 +33,19 @@ end
 	        password: params[:password],
 	        password_confirmation: params[:password_confirmation]
 			)
-	if sitter.save
-      session[:sitter_id] = sitter.id
+	
+    
+      if sitter.save
+         session[:sitter_id] = sitter.id
+         params[:pet_type_ids].each do |pet_type_id|
+
+      sitter_pet_type=SitterPetType.new(
+        pet_type_id: pet_type_id,
+        sitter_id: sitter.id
+        )
+   
+      sitter_pet_type.save
+    end
       flash[:success] = 'Successfully created account!'
       redirect_to '/home'
     else
@@ -44,9 +56,11 @@ end
 
   def show
     @sitter = Sitter.find_by(id:params[:id])
+    @owner=Owner.find_by(id:params[:id])
 
     @reviews=@sitter.reviews
-    @reservations = @sitter.reservations
+    @confirmed_reservations = @sitter.reservations.where(confirmed:"yes")
+    @reservations = @sitter.reservations.where(confirmed:nil)
     render 'show.html.erb'
   end 
 

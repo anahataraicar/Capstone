@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   get "/sitters/:id" => 'sitters#show'
   get "/owners" => "owners#index"
   get "/owners/:id" => "owners#show"
+  # pets
   get "/pets" => "pets#index"
+    get "/pets/new" => "pets#new"
+      post "/pets" => "pets#create"
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get "/pets" => "pets#index"

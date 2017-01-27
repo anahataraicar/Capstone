@@ -3,12 +3,12 @@ class ReservationsController < ApplicationController
   def index
   end
     def  new
-    	@sitter=Sitter.find_by(id:params[:id])
+    	@sitter=Sitter.find_by(id:params[:sitter_id])
     	render 'new.html.erb'
     end 
 
 	def create 
-		
+		@sitter=Sitter.find_by(id:params[:sitter_id])
 		reservation=Reservation.new(
 			start_date: params[:start_date],
 			end_date: params[:end_date],
@@ -17,15 +17,18 @@ class ReservationsController < ApplicationController
 			host: params[:host],
 			price: params[:price],
 			owner_id: current_owner.id,
-			sitter_id: params[:sitter_id],
+			sitter_id: @sitter.id,
 			pet_id: params[:pet]["pet_id"]
 			)
+		p "e"*200
+		p @sitter.id
+
 			if reservation.save
 		      flash[:success] = 'You have successfully made a reservation'
 		    else
 		      flash[:warning] = 'Reservation not made!'
 		    end
-		      redirect_to '/reservations'
+		      redirect_to "/reservations?sitter_id=#{@sitter.id}"
 	end
 
 
@@ -39,7 +42,7 @@ class ReservationsController < ApplicationController
 			 # confirmed:params[:confirmed] || params[:not_confirmed]
 			 # 	)
 			 @confirmedornot=params[:confirmed] || params[:not_confirmed]
-			 @reservation.update(confirmed: @confirmedornot)
+			
 			 p "thankyouuuuuu"
 			 p @confirmedornot
 			 p params[:confirmed]
@@ -49,9 +52,13 @@ class ReservationsController < ApplicationController
 			 	
             if params[:confirmed] == "Yes"
 			 	flash[:success] ="You confirmed a reservation"
+			 	 @reservation.update(confirmed: params[:confirmed])
 			 	redirect_to "/reservations/#{@reservation.id}"
 			 else
 			 	flash[:failure]="You didn't confirm your reservation"
+			 	 @reservation.update(confirmed: params[:not_confirmed])
+			 	redirect_to "/reservations/#{@reservation.id}"
+
 		     end
 				# redirect_to "/sitters/#{@sitter.id}" 
 		

@@ -1,7 +1,24 @@
-<h3>Make a reservation here: </h3>
 
-<%= form_tag '/reservations', method: :post do  %>
-<%= collection_select(:pet, :pet_id, current_owner.pets, :id, :name) %>
+<head>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+        <div class="clear"></div> 
+     </div>
+  </div>
+ </div>
+       <div class="main" style="background-color: floralWhite;">
+     <div class="wrap" >
+      <div class="about"
+        <div class="about-top"  >
+         
+          <h3> MAKE A RESERVATION </h3>
+          <%= form_tag '/reservations', method: :post do  %>
+          <p> Select your pet: </p>
+    <%= collection_select(:pet, :pet_id, current_owner.pets, :id, :name) %>
  <div>
     <%= label_tag :start_date %>
     <%= text_field_tag :start_date %>
@@ -39,3 +56,75 @@
   
   <%= submit_tag "Submit" %>
 <% end %>
+        
+
+           
+                    <% console %>
+          
+              <div class="clear">
+                <p>   <a href="/sitters/<%= @sitter.id %>"> Back to sitter profile  </p>
+              </div> 
+                   </div>
+          </div>
+         
+                
+              
+              
+               </div>
+              
+               </div>
+               
+            </div>
+             
+                
+                <div class="clear"></div>
+              </li>
+            </ul>
+           </div>
+          <div class="clear"></div>
+         </div>
+    </div>
+  </div>
+   </div>
+   
+
+
+  
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

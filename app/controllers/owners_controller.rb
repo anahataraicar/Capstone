@@ -29,7 +29,7 @@ class OwnersController < ApplicationController
 	if owner.save
       session[:owner_id] = owner.id
       flash[:success] = 'Successfully created account!'
-      redirect_to '/home'
+      redirect_to '/pets/new'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/signup/owners'

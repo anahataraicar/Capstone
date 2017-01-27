@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Free Smarty Website Template | Gallery :: w3layouts</title>
+<link href="/css/style.css" rel="stylesheet" type="/text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<body>
+
+     <div class="main" style="background-color: floralWhite;">
+    <div class="wrap">
+      <div class="about-top">
+        <div class="about">
+         
+        <div class="section group">
+        <div class="grid_1_of_4 images_1_of_4">
+        <h2>ADD A PET </h2>
+           <%= form_tag '/pets', method: :post do  %>
+ <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+ <div>
+    <%= label_tag :species %>
+    <%= text_field_tag :species %>
+  </div>
+
+  <div>
+    <%= label_tag :age %>
+    <%= text_field_tag :age %>
+  </div>
+    <div>
+    <%= label_tag :bio %>
+    <%= text_field_tag :bio %>
+  </div>
+    <div>
+    <%= label_tag :gender%>
+    <%= text_field_tag :gender%>
+  </div>
+   <div>
+    <%= label_tag :image%>
+    <%= text_field_tag :image%>
+  </div>
+  <div>
+    <%= hidden_field_tag :owner_id, params[:owner_id] %>
+  </div>
+
+  <%= submit_tag "Submit" %>
+<% end %>
+           <p> <a href="/owners/<%=current_owner.id%>"> Back to profile </p>
+  
+          </div>
+
+          <div class="grid_1_of_4 images_1_of_4">
+            <a href="/images/t-pic16.jpg" class="swipebox" title="Image Title"> <img src="/images/pic16.jpg" alt=""><span class="zoom-icon"></span> </a>
+           
+          
+          </div>
+          
+          <div class="grid_1_of_4 images_1_of_4">
+           <a href="/images/t-pic19.jpg" class="swipebox" title="Image Title"> <img src="/images/pic19.jpg" alt=""><span class="zoom-icon"></span> </a>
+          
+        
+          </div>
+         
+            <div class="grid_1_of_4 images_1_of_4">
+            <a href="/images/t-pic20.jpg" class="swipebox" title="Image Title"> <img src="/images/pic20.jpg" alt=""><span class="zoom-icon"></span> </a>
+            
+           
+          </div>
+          <div class="clear"></div> 
+          </div>
+         
+      </div>
+    </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+            
+                    
+
+
+             
+  
+        
+
+
+            
+
+
+
+
+
+          
+          
+              
+
+
+
+
+
+
+
+
+

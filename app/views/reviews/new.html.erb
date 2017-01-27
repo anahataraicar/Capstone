@@ -1,20 +1,86 @@
+<head>
 
-Add a review here:
-
-<%= form_tag '/reviews', method: :post do  %>
-
- <div>
-    <%= label_tag :review %>
-    <%= text_field_tag :review %>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+        <div class="clear"></div> 
+     </div>
   </div>
-  <div>
-    <%= hidden_field_tag :owner_id, params[:owner_id] %>
-  </div>
-  <div>
-    <%= hidden_field_tag :sitter_id, params[:sitter_id] %>
-  </div>
+ </div>
+       <div class="main" style="background-color: floralWhite;">
+     <div class="wrap" >
+      <div class="about"
+        <div class="about-top"  >
+         
+          <h3> ADD A REVIEW </h3>
+        
 
-  <%= submit_tag "Submit" %>
-<% end %>
+            <%= form_tag '/reviews', method: :post do  %>
 
-<p> <a href="sitters/#{@sitter.id}"> Back to sitter profile </p>
+            <div>
+            <%= label_tag :review %>
+            <%= text_field_tag :review %>
+            </div>
+            <div>
+            <%= hidden_field_tag :owner_id, params[:owner_id] %>
+            </div>
+            <div>
+            <%= hidden_field_tag :sitter_id, params[:sitter_id] %>
+            </div>
+
+            <%= submit_tag "Submit" %>
+            <% end %>
+                    
+          
+              <div class="clear">
+                <p>   <a href="/sitters/<%#{@sitter.id}%>"> Back to sitter profile  </p>
+              </div> 
+                   </div>
+          </div>
+         
+                  
+                    
+              
+              
+               </div>
+              
+               </div>
+               
+            </div>
+             
+                
+                <div class="clear"></div>
+              </li>
+            </ul>
+           </div>
+          <div class="clear"></div>
+         </div>
+    </div>
+  </div>
+   </div>
+   
+
+
+  
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
