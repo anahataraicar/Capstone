@@ -2,6 +2,7 @@ class Owner < ApplicationRecord
 	has_secure_password
 	has_many :pets
 	has_many :reservations
+	has_many :reviews
 
 
 

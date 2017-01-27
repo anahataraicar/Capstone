@@ -12,8 +12,9 @@
      </div>
   </div>
  </div>
-       <div class="main" style="background-color: floralWhite;" >
+       <div class="main" style="background-color: lightgrey;" >
      <div class="wrap">
+     <div class="profile">
       <div class="about">
         <div class="about-top">
           <div class="col span_1_of_about">
@@ -32,6 +33,7 @@
 
 <h4> My reservations: </h4>
 <% @reservations.each do |reservation| %>
+<p>  Name of the sitter: <%=reservation.sitter.first_name%> </p></p>
  <p> Start Date:<%= reservation.start_date %> </p>
 <p> End Date: <%= reservation.end_date %> </p>
 <p> Start Time: <%= reservation.start_time%> </p>
@@ -49,7 +51,7 @@
            
               </div> 
               <div>
-                     	<h3> Find a sitter for your pet by animal type</h3>
+                     	<h3> Find a sitter by animal type</h3>
 
 <%= form_tag('/sitters', :method => "get", id: "search-form") do %>
 
@@ -70,8 +72,8 @@
 <p> <strong> Age:</strong> <%= pet.age %> </p>
 <p> <strong> Bio:  </strong> <<%= pet.bio %> </p>
 <p> <strong> Gender: </strong> <%= pet.gender %> </p>
-<p> <%= pet.owner_id %> </p>
-<p> <%=pet.id %> </p>
+<!-- <p> <%= pet.owner_id %> </p>
+<p> <%=pet.id %> </p> -->
 
 <img src="<%= pet.image %>" width="335">
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-     <div class="main" style="background-color: floralWhite;">
+     <div class="main" style="background-color: lightgrey;">
 		 <div class="wrap">
 			<div class="about">
 				<div class="about-top">
@@ -29,30 +29,31 @@
 
 <h4> Confirmed Reservations:</h4>
 
-							<% @confirmed_reservations.each do |confirmed_reservation| %>
-							
-	<p> Start Date:<%= confirmed_reservation.start_date %> </p>
-	<p> End Date: <%= confirmed_reservation.end_date %> </p>
-	<p> Start Time: <%= confirmed_reservation.start_time%> </p>
-	<p> End Time:<%= confirmed_reservation.end_time %> </p>
-	<p> Host: <%= confirmed_reservation.host %> </p>
-	<p>Message: <%= confirmed_reservation.message %></p>
-	<p> Price: <%= confirmed_reservation.price %> </p>
-	<% end %>
+			<% @confirmed_reservations.each do |confirmed_reservation| %>
+				<p> <strong>  Owner: </strong> <%= confirmed_reservation.owner.first_name%> </p	
+			<p> <strong>  Start Date: </strong> <%= confirmed_reservation.start_date %> </p>
+	<p> <strong> End Date:</strong>  <%= confirmed_reservation.end_date %> </p>
+	<p> <strong> Start Time: </strong> <%= confirmed_reservation.start_time%> </p>
+	<p> <strong> End Time: </strong> <%= confirmed_reservation.end_time %> </p>
+	<p> <strong> Host: </strong> <%= confirmed_reservation.host %> </p>
+	<p> <strong> Message:</strong> <%= confirmed_reservation.message %></p>
+	<p> <strong>  Price:</strong> <%= confirmed_reservation.price %> </p>
+			<% end %>			
+	
 				
 <h4> Reservations pending for review: </h4>
 
 
 <% @reservations.each do |reservation| %>
-	<p> Start Date:<%= reservation.start_date %> </p>
-	<p> End Date: <%= reservation.end_date %> </p>
-	<p> Start Time: <%= reservation.start_time%> </p>
-	<p> End Time:<%= reservation.end_time %> </p>
-	<p> Host: <%= reservation.host %> </p>
-	<p>Message: <%= reservation.message %></p>
-	<p> Price: <%= reservation.price %> </p>
-	<p> Confirm your reservation : </p>
-	<p> <%= reservation.confirmed %> </p>
+	<p> <strong>  Start Date: </strong> <%= reservation.start_date %> </p>
+	<p> <strong> End Date:</strong>  <%= reservation.end_date %> </p>
+	<p> <strong> Start Time: </strong> <%= reservation.start_time%> </p>
+	<p> <strong> End Time: </strong> <%= reservation.end_time %> </p>
+	<p> <strong> Host: </strong> <%= reservation.host %> </p>
+	<p> <strong> Message:</strong> <%= reservation.message %></p>
+	<p> <strong>  Price:</strong> <%= reservation.price %> </p>
+	<p> <strong> </strong> Confirm your reservation : </p>
+	<p> <strong> </strong> <%= reservation.confirmed %> </p>
 
 
 	<%= form_tag "/reservations/#{reservation.id}", method: :patch do  %>	
@@ -71,11 +72,14 @@
 
 
 
+
 <div>
 <% if current_owner %>
 <p> <a href="/reservations?sitter_id=<%= @sitter.id%>"> Make a reservation </p>
-<p> <a href="/reviews?sitter_id=<%= @sitter.id%>"> Add a review </p>
+<p> <a href="/reviews?sitter_id=<%= @sitter.id%>"> Add a review </a> </p>
+<p> <a href="/owners/<%= current_owner.id %>"> Back </a> </p>
 <% end %>
+
 </div>
 							</div>
 					</div>
@@ -89,7 +93,8 @@
 							<div class="icon"></div>
 
 							<p> <%= review.review %> <p>
-							<p> By <%= @owner.first_name %> </p>
+								<p> - <%= review.owner.first_name%> <%= review.owner.last_name%> <p>
+							
 						</li>
 							<% end %>
 						

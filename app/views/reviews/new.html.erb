@@ -9,7 +9,7 @@
      </div>
   </div>
  </div>
-       <div class="main" style="background-color: floralWhite;">
+       <div class="main" style="background-color: lightgrey;">
      <div class="wrap" >
       <div class="about"
         <div class="about-top"  >
@@ -21,7 +21,7 @@
 
             <div>
             <%= label_tag :review %>
-            <%= text_field_tag :review %>
+            <%= text_field_tag :review,"",size:90%>
             </div>
             <div>
             <%= hidden_field_tag :owner_id, params[:owner_id] %>

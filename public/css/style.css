@@ -41,17 +41,34 @@ body{
 	background:#ECF0F1;
 }
 .main{
-	background-color: ivory;
+	background-color: lightgre.;
 }
 .login{
 /*background-color: white;*/
 background-color: white;
 text-align: center;
 }
+.button{
+	 background-color: #C0392B;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.profile{
+	max-width: 200%;
+	
+}
+
 
 .wrap{
-	max-width:75%;
-	margin-left: 13%;
+	max-width:65%;
+	margin-left: 24%;
 	margin:0 auto;
 	-moz-transition:all .2s linear;
 	-webkit-transition:all .2s linear; 
@@ -106,6 +123,9 @@ text-align: center;
 	-moz-transition: .2s all linear;
 	-o-transition: .2s all linear;
 	transition: .2s all linear;
+}
+. signup {
+
 }
 /*--content--*/
 .content-top{
@@ -570,6 +590,7 @@ ul.last li span {
 }
 .footer-top {
 	padding: 4% 0 2%;
+	margin-left: 35%;
 	border-bottom: 1px solid #363636;
 }
 .footer{

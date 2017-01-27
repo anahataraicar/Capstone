@@ -37,6 +37,8 @@ class ReservationsController < ApplicationController
 		@sitter=Sitter.find(current_sitter.id)
 		p @sitter.id
 		@reservation=Reservation.find_by(id:params[:id])
+		p "o"*200
+		p @confirmed_reservation=Reservation.where(sitter_id: @sitter.id).where(confirmed:"Yes").last
 	# 	@reservations=@sitter.reservations
 	   #   @reservation.update(
 			 # confirmed:params[:confirmed] || params[:not_confirmed]
@@ -53,11 +55,13 @@ class ReservationsController < ApplicationController
             if params[:confirmed] == "Yes"
 			 	flash[:success] ="You confirmed a reservation"
 			 	 @reservation.update(confirmed: params[:confirmed])
-			 	redirect_to "/reservations/#{@reservation.id}"
+			 	# redirect_to "/reservations/#{@reservation.id}"
+			 	redirect_to "/sitters/#{@sitter.id}"
 			 else
 			 	flash[:failure]="You didn't confirm your reservation"
 			 	 @reservation.update(confirmed: params[:not_confirmed])
-			 	redirect_to "/reservations/#{@reservation.id}"
+			 	# redirect_to "/reservations/#{@reservation.id}"
+			 		redirect_to "/sitters/#{@sitter.id}"
 
 		     end
 				# redirect_to "/sitters/#{@sitter.id}" 
@@ -67,7 +71,9 @@ class ReservationsController < ApplicationController
 
 	def show
     	@sitter=Sitter.find(current_sitter)
-    	@confirmed_reservation=Reservation.where(sitter_id: @sitter.id).where(confirmed:"Yes").last
+    	@confirmed_reservation=Reservation.where(sitter_id: @sitter.id).where(confirmed:params[:confirmed]).last
+    	
+    	p @confirmed_reservation
 
     end 
 

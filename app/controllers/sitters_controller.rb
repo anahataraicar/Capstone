@@ -59,7 +59,7 @@ end
     @owner=Owner.find_by(id:params[:id])
 
     @reviews=@sitter.reviews
-    @confirmed_reservations = @sitter.reservations.where(confirmed:"yes")
+    @confirmed_reservations = @sitter.reservations.where(confirmed:"Y es")
     @reservations = @sitter.reservations.where(confirmed:nil)
     render 'show.html.erb'
   end 
