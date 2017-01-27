@@ -18,29 +18,29 @@
       <div class="about">
         <div class="about-top">
           <div class="col span_1_of_about">
-          <h3> MY PROFILE </h3>
+          <h3 style="font-family: fantasy;"> MY PROFILE </h3>
             <div class="sidebar-nav">
    
-   <p> First Name: <%= @owner.first_name %> </p>
-<p> Last Name: <%= @owner.last_name %> </p>
-<p>Address: <%= @owner.address %> </p>
-<p> City:<%= @owner.city %> </p>
-<p> State: <%= @owner.state %> </p>
-<p>  Zipcode:<%= @owner.zipcode %> </p>
-<p> Phone Number: <%=@owner.phone_number %> </p>
-<p> Email: <%= @owner.email %> </p>
+   <p> <strong> First Name: </strong> <%= @owner.first_name %> </p>
+<p> <strong> Last Name: </strong> <%= @owner.last_name %> </p>
+<p> <strong> Address: </strong> <%= @owner.address %> </p>
+<p> <strong> City: </strong> <%= @owner.city %> </p>
+<p><strong> State: </strong> <%= @owner.state %> </p>
+<p>  <strong>Zipcode: </strong><%= @owner.zipcode %> </p>
+<p> <strong> Phone Number: </strong> <%=@owner.phone_number %> </p>
+<p> <strong> Email: </strong> <%= @owner.email %> </p>
 
 
 <h4> My reservations: </h4>
 <% @reservations.each do |reservation| %>
-<p>  Name of the sitter: <%=reservation.sitter.first_name%> </p></p>
- <p> Start Date:<%= reservation.start_date %> </p>
-<p> End Date: <%= reservation.end_date %> </p>
-<p> Start Time: <%= reservation.start_time%> </p>
-<p> End Time:<%= reservation.end_time %> </p>
-<p> Host: <%= reservation.host %> </p>
-<p>Message: <%= reservation.message %></p>
-<p> Price: <%= reservation.price %> </p>
+<p> <strong> Name of the sitter:</strong>  <%=reservation.sitter.first_name%> </p></p>
+ <p> <strong> Start Date:</strong> <%= reservation.start_date %> </p>
+<p> <strong> End Date: </strong> <%= reservation.end_date %> </p>
+<p><strong> Start Time:</strong> <%= reservation.start_time%> </p>
+<p> <strong>End Time: </strong> <%= reservation.end_time %> </p>
+<p> <strong> Host: </strong> <%= reservation.host %> </p>
+<p> <strong> Message: </strong> <%= reservation.message %></p>
+<p><strong> Price: </strong> <%= reservation.price %> </p>
 <% end %>
                     
 
@@ -51,7 +51,7 @@
            
               </div> 
               <div>
-                     	<h3> Find a sitter by animal type</h3>
+                     	<h3 style="font-family: fantasy;"> Find a sitter by animal type</h3>
 
 <%= form_tag('/sitters', :method => "get", id: "search-form") do %>
 
@@ -62,13 +62,14 @@
                    </div>
           </div>
           <div class="col span_1_of_about1">
-          <h3>PET PROFILE </h3>
+          <h3 style="font-family: fantasy;">PET PROFILE </h3>
             <div class="services-box">
 
 
 
 <%@pets.each do |pet| %>
 <p> <strong> Name: </strong> <%= pet.name %> </p>
+<p> <strong> Type: </strong> <%= pet.species %> </p>
 <p> <strong> Age:</strong> <%= pet.age %> </p>
 <p> <strong> Bio:  </strong> <<%= pet.bio %> </p>
 <p> <strong> Gender: </strong> <%= pet.gender %> </p>

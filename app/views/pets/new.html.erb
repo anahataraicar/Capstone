@@ -16,34 +16,34 @@
       <div class="about-top">
         <div class="about">
          
-        <div class="section group">
+        <div class="section group" style="max-width: 80%">
         <div class="grid_1_of_4 images_1_of_4">
-        <h2>ADD A PET </h2>
+        <h2 style="font-family: fantasy;">ADD A PET </h2>
            <%= form_tag '/pets', method: :post do  %>
  <div>
     <%= label_tag :name %>
-    <%= text_field_tag :name %>
+    <%= text_field_tag :name,"",size:40 %>
   </div>
  <div>
     <%= label_tag :species %>
-    <%= text_field_tag :species %>
+    <%= text_field_tag :species,"",size:40 %>
   </div>
 
   <div>
     <%= label_tag :age %>
-    <%= text_field_tag :age %>
+    <%= text_field_tag :age,"",size:40   %>
   </div>
     <div>
     <%= label_tag :bio %>
-    <%= text_field_tag :bio %>
+    <%= text_field_tag :bio,"",size:40 %>
   </div>
     <div>
     <%= label_tag :gender%>
-    <%= text_field_tag :gender%>
+    <%= text_field_tag :gender,"",size:40%>
   </div>
    <div>
     <%= label_tag :image%>
-    <%= text_field_tag :image%>
+    <%= text_field_tag :image,"",size:40%>
   </div>
   <div>
     <%= hidden_field_tag :owner_id, params[:owner_id] %>
@@ -55,20 +55,11 @@
   
           </div>
 
-          <div class="grid_1_of_4 images_1_of_4">
-            <a href="/images/t-pic16.jpg" class="swipebox" title="Image Title"> <img src="/images/pic16.jpg" alt=""><span class="zoom-icon"></span> </a>
-           
-          
-          </div>
-          
-          <div class="grid_1_of_4 images_1_of_4">
-           <a href="/images/t-pic19.jpg" class="swipebox" title="Image Title"> <img src="/images/pic19.jpg" alt=""><span class="zoom-icon"></span> </a>
-          
-        
-          </div>
          
-            <div class="grid_1_of_4 images_1_of_4">
-            <a href="/images/t-pic20.jpg" class="swipebox" title="Image Title"> <img src="/images/pic20.jpg" alt=""><span class="zoom-icon"></span> </a>
+          
+         
+         
+         
             
            
           </div>

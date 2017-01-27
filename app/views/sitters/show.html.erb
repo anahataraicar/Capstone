@@ -13,9 +13,9 @@
 			<div class="about">
 				<div class="about-top">
 					<div class="col span_1_of_about">
-							<h3> SITTER PROFILE</h3>
+							<h3 style="font-family: fantasy"> SITTER PROFILE</h3>
 							
-							<div class="about-desc">
+							<div class="about-desc" style="color: black">
 							<p> <strong> Name: </strong><%= @sitter.first_name %>  <%= @sitter.last_name %> </p>
 							<p> <strong> Address: </strong> <%= @sitter.address %> </p>
 							<p> <strong> City: </strong> <%= @sitter.city %> </p>
@@ -72,19 +72,20 @@
 
 
 
-
-<div>
 <% if current_owner %>
+<div>
+
 <p> <a href="/reservations?sitter_id=<%= @sitter.id%>"> Make a reservation </p>
 <p> <a href="/reviews?sitter_id=<%= @sitter.id%>"> Add a review </a> </p>
 <p> <a href="/owners/<%= current_owner.id %>"> Back </a> </p>
+</div>
 <% end %>
 
-</div>
+
 							</div>
 					</div>
 					<div class="col span_1_of_about1">
-						<h3>RECENT REVIEWS For <%=@sitter.first_name %> </h3>
+						<h3 style="font-family: fantasy">RECENT REVIEWS For <%=@sitter.first_name %> </h3>
 						<ul class="comments-custom unstyled">			
 					      
 								
